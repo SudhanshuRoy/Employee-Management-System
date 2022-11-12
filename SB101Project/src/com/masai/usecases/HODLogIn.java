@@ -1,0 +1,28 @@
+package com.masai.usecases;
+
+import java.util.Scanner;
+
+import com.masai.dao.HODDaoImpl;
+import com.masai.exception.HODException;
+
+public class HODLogIn {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter username : ");
+		String username=sc.next();
+		System.out.println("Enter password : ");
+		String password=sc.next();
+		HODDaoImpl dao=new HODDaoImpl();
+		
+		try {
+			String msg=dao.logInHOD(username, password);
+			System.out.println(msg);
+		} catch (HODException e) {
+			
+			e.printStackTrace();
+		}
+
+	}
+
+}
