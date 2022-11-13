@@ -160,7 +160,7 @@ public class HODDaoImpl implements HODDao{
 	public String assignProblemToEngineer(Complaint complaint){
 		String msg="Complaint not registered..";
 		try(Connection conn=DBUtil.provideConnection()){
-		PreparedStatement ps=	conn.prepareStatement("insert int complaint(engid,empid,category,status) values(?,?,?,?) ");
+		PreparedStatement ps=	conn.prepareStatement("insert into complaint(engid,empid,category,status) values(?,?,?,?) ");
 		ps.setInt(1, complaint.getEngid());
 		ps.setInt(2, complaint.getEmpid());
 		ps.setString(3, complaint.getCategory());

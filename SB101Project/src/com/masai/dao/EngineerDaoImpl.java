@@ -40,7 +40,7 @@ public class EngineerDaoImpl implements EngineerDao{
 	}
 
 	@Override
-	public List<Complaint> getAllProblems(int engid) throws EngineerException {
+	public List<Complaint> getAllProblems(int engid) throws ComplaintException {
 		List<Complaint> complaints=new ArrayList<>();
 		
 		
@@ -61,13 +61,13 @@ public class EngineerDaoImpl implements EngineerDao{
 		}
 		
 		if(complaints.size()==0) {
-			throw new EngineerException("No complaint assigned with engineer id :  "+engid);
+			throw new ComplaintException("No complaint assigned with engineer id :  "+engid);
 		}
 			
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
-			throw new EngineerException(e.getMessage());
+			throw new ComplaintException(e.getMessage());
 		}
 		
 		return complaints;
