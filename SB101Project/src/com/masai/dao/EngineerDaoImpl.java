@@ -55,7 +55,7 @@ public class EngineerDaoImpl implements EngineerDao{
 			String category=rs.getString("category");
 			String status=rs.getString("status");
 			int empid=rs.getInt("empid");
-			int eid=rs.getInt("engid");
+			
 			Complaint complaint =new Complaint(compid,category,status,empid,engid);
 			complaints.add(complaint);
 		}

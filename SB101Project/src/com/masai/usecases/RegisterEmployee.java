@@ -22,7 +22,7 @@ Scanner sc=new Scanner(System.in);
 		System.out.println("Enter password: ");
 		String password=sc.next();
 		
-		
+//		sc.close();
 		
 		EmployeeDao dao=new EmployeeDaoImpl();
 		Employee emp =new Employee();
@@ -37,6 +37,7 @@ Scanner sc=new Scanner(System.in);
 		try {
 			msg = dao.employeeRegistration(emp);
 			System.out.println(msg);
+			
 		} catch (EmployeeException e) {
 			
 			e.printStackTrace();

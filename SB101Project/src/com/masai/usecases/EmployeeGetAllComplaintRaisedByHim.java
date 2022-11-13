@@ -14,6 +14,7 @@ public class EmployeeGetAllComplaintRaisedByHim {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter your empid : ");
 		int empid=sc.nextInt();
+//		sc.close();
 		EngineerDao dao=new EngineerDaoImpl();
 		try {
 			List<Complaint> complaints=dao.getAllProblems(empid);

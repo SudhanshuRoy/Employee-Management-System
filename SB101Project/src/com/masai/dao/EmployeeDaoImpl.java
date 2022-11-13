@@ -9,7 +9,6 @@ import java.util.List;
 
 import com.masai.exception.ComplaintException;
 import com.masai.exception.EmployeeException;
-import com.masai.exception.EngineerException;
 import com.masai.model.Complaint;
 import com.masai.model.Employee;
 import com.masai.utility.DBUtil;
@@ -102,7 +101,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			int compid=rs.getInt("compid");
 			String category=rs.getString("category");
 			String status=rs.getString("status");
-			int eid=rs.getInt("empid");
+//			int eid=rs.getInt("empid");
 			int engid=rs.getInt("engid");
 			Complaint complaint =new Complaint(compid,category,status,empid,engid);
 			complaints.add(complaint);

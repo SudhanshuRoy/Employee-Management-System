@@ -24,7 +24,7 @@ public class RegisterEngineer {
 		
 		System.out.println("Enter category(Hardware/Software) : ");
 		String category=sc.next();
-		
+//		sc.close();
 		HODDao dao=new HODDaoImpl();
 		
 		Engineer eng=new Engineer();

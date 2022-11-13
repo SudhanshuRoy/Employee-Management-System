@@ -14,6 +14,7 @@ public class EngineerChangePassword {
 		String email=sc.next();
 		System.out.println("Enter password : ");
 		String password=sc.next();
+//		sc.close();
 		EngineerDao dao=new EngineerDaoImpl();
 		try {
 			String msg=  dao.changePassword(email, password);

@@ -13,8 +13,6 @@ import com.masai.exception.HODException;
 import com.masai.model.Complaint;
 import com.masai.model.Engineer;
 import com.masai.utility.DBUtil;
-import com.mysql.cj.jdbc.JdbcPreparedStatement;
-import com.mysql.cj.protocol.x.SyncFlushDeflaterOutputStream;
 
 public class HODDaoImpl implements HODDao{
 
@@ -30,7 +28,8 @@ public class HODDaoImpl implements HODDao{
 		ResultSet rs= ps.executeQuery();
 		
 		if(rs.next()) {
-			msg=("Welcome : "+rs.getString("username"));
+			String name=rs.getString("name");
+			msg=("Welcome : "+name);
 		}else {
 			throw new HODException("Invalid username or password");
 		}
@@ -108,12 +107,13 @@ public class HODDaoImpl implements HODDao{
 		try(Connection conn=DBUtil.provideConnection()){
 			
 		PreparedStatement ps=	conn.prepareStatement("delete from engineer where engid=?");
+		ps.setInt(1, engid);
 		int x=ps.executeUpdate();
 		
 		if(x>0) {
 			msg=x+" engineer deleted";
 		}else {
-			throw new EngineerException("Engineer not deleted");
+			throw new EngineerException("Engineer not found with id : "+engid);
 		}
 		
 			

@@ -17,7 +17,7 @@ public class AssignProblemToEngineer {
 		String category=sc.next();
 		System.out.println("Enter status : ");
 		String status=sc.next();
-		
+//		sc.close();
 		Complaint complaint=new Complaint();
 		complaint.setCategory(category);
 		complaint.setEngid(engid);
